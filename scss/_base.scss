@@ -70,18 +70,6 @@ header {
                 }
             }
         }
-        // span {
-        //     width: 100%;
-        //     height: 2px;
-        //     background: #FFF;
-        //     transition: .3s;
-        // }
-        // &:hover {
-        //     span {
-        //         background: $mainBlue;
-        //         height: 5px;
-        //     }
-        // }
     }
 }
 
@@ -89,14 +77,14 @@ header {
 
 nav {
     position: fixed;
-    display: none;
     top: 0;
-    right: 0;
+    right: -280px;
     background: #0C0C0C;
     height: 100%;
     width: 280px;
     color: #fff;
     padding: 1.25rem;
+    z-index: 700;
     a.nav-close {
         @extend %clearfix;
         cursor: pointer;
@@ -129,13 +117,16 @@ nav {
         }
     }
     h2 {
-        font-size: 1.25rem;
+        font-size: 1rem;
         text-align: center;
         color: $mainBlue;
         margin-bottom: 1.5em;
     }
     ul, ol {
         list-style-type: none;
+        position: relative;
+        left: 100px;
+        opacity: 0;
     }
     ul.nav-main-list {
         li {
@@ -143,7 +134,7 @@ nav {
                 display: block;
                 color: #fff;
                 text-decoration: none;
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 padding: 10px;
                 transition: .3s ease-in-out;
             }
@@ -160,6 +151,9 @@ nav {
         padding: 4rem 0;
         color: $mainGray;
         text-align: justify;
+        position: relative;
+        left: 100px;
+        opacity: 0;
     }
     ol.nav-socials {
         display: flex;
