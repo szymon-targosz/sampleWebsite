@@ -515,7 +515,17 @@ nav {
                 }
                 input[type='submit'] {
                     background: $mainBlue;
+                    border: 2px solid $mainBlue;
                     color: #000;
+                    &:hover {
+                        background: transparent;
+                        color: $mainBlue;
+                    }
+                    &:active {
+                        background: #0460b5;
+                        color: #000;
+                        border: 2px solid #0460b5;
+                    }
                 }
                 textarea {
                     resize: vertical;
