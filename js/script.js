@@ -18,8 +18,20 @@ $(() => {
                 opacity: 1,
             }, 800);
 
-            const navCloseBtn = $('nav a.nav-close');
-            navCloseBtn.on('click', closeNav);
+            const anchors = $('.nav-main-list a');
+            anchors.on('click', (e) => {
+                e.preventDefault();
+                const target = $(e.target).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top,
+                }, 600, () => {
+                    closeNav()
+                });
+            });
+
+
+            // closing navigation
+            $('nav a.nav-close').on('click', closeNav);
 
             // CLOSE NAVIGATION PANEL
             function closeNav() {
@@ -35,5 +47,23 @@ $(() => {
         };
     }
 
+    // PREVENT SUBMIT
+    $('input[type="submit"]').on('click', (e) => {
+        e.preventDefault();
+    });
+
+    //scroll to top button
+    const scrollUpBtn = $('.scroll-up');
+    $(window).on('scroll', (e) => {
+        if ($(this).scrollTop() > 350) scrollUpBtn.fadeIn();
+        else scrollUpBtn.fadeOut();
+    });
+
+    scrollUpBtn.on('click', (e) => {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 600);
+    });
 
 });
