@@ -288,7 +288,7 @@ nav {
 
 // SECTION ABOUT && TECHNOLOGIES && PROJECTS
 
-#about, #technologies, #projects {
+#about, #technologies, #projects, #contact {
     min-height: 40vh;
     h3, h1 {
         text-transform: uppercase;
@@ -380,6 +380,7 @@ nav {
     }
     .projects-content {
         margin-top: -11rem;
+        margin-bottom: 4rem;
         column-count: 2;
         column-gap: 0.625rem;
         @media (max-width: 640px) {
@@ -467,6 +468,73 @@ nav {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+// section CONTACT
+#contact {
+    background: url('../images/lostPlace.jpg') no-repeat center/cover;
+    padding: 6rem 10px;
+    h3 {
+        color: $mainBlue;
+    }
+    h1 {
+        color: #FFF;
+    }
+    span {
+        background: $mainBlue;
+    }
+    .contact-main {
+        @extend %clearfix;
+        margin-top: 4rem;
+        background: rgba(12, 12, 12, .95);
+        padding: 10px;
+        .contact-form {
+            float: left;
+            width: 60%;
+            form {
+                input, textarea {
+                    background: transparent;
+                    width: 100%;
+                    color: $mainBlue;
+                    padding: 10px;
+                    font-size: 1.25rem;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid #333;
+                    font-family: 'Montserrat', sans-serif;
+                    transition: .3s ease-in-out;
+                    margin-bottom: 1.5rem;
+                    &::placeholder {
+                        color: #555;
+                    }
+                    &:focus {
+                        border-bottom: 1px solid $mainBlue;
+                    }
+                }
+                input[type='submit'] {
+                    background: $mainBlue;
+                    color: #000;
+                }
+                textarea {
+                    resize: vertical;
+                }
+            }
+        }
+        .contact-info {
+            padding: 20px 0 20px 40px;
+            float: left;
+            width: 40%;
+            h3 {
+                text-transform: none;
+                text-align: left;
+                padding: 10px 0;
+            }
+            p {
+                color: #FFF;
+                line-height: 150%;
             }
         }
     }
