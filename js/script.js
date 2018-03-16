@@ -1,5 +1,7 @@
 $(() => {
 
+
+    // SHOW/HIDE NAVIGATION
     const menuBtn = $('a.menu');
     menuBtn.on('click', showMenu);
 
@@ -19,14 +21,15 @@ $(() => {
             const navCloseBtn = $('nav a.nav-close');
             navCloseBtn.on('click', closeNav);
 
+            // CLOSE NAVIGATION PANEL
             function closeNav() {
                 navElements.animate({
                     left: '100px',
                     opacity: 0,
-                }, 500);
+                }, 400);
                 nav.animate({
                     right: '-280px',
-                }, 800);
+                }, 500);
             }
 
         };
