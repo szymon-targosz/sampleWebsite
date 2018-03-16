@@ -379,12 +379,73 @@ nav {
         }
     }
     .projects-content {
-        margin-top: -10rem;
+        margin-top: -14rem;
         column-count: 2;
         column-gap: 0.625rem;
         .project {
             display: inline-block;
             margin-bottom: 0.625rem;
+            .overlay {
+                overflow: hidden;
+                position: relative;
+                img {
+                    transition: .3s ease-in-out;
+                    transform: scale(1.05);
+                }
+                .project-info {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: #000;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.75;
+                    transition: .3s ease-in-out;
+                    a {
+                        color: #FFF;
+                        display: block;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid #FFF;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: -100px;
+                        left: 20px;
+                        transition: top .5s ease-in-out, color .3s ease-in-out, border .4s ease-in-out;
+                        &:hover {
+                            color: $mainBlue;
+                            border: 1px solid $mainBlue;
+                        }
+                    }
+                    .project-description {
+                        transition: bottom .5s ease-in-out;
+                        position: absolute;
+                        bottom: -125px;
+                        color: #FFF;
+                        padding: 0.625rem;
+                        text-align: justify;
+                        h3 {
+                            text-align: left;
+                        }
+                    }
+                }
+                &:hover {
+                    img {
+                        transform: scale(1.15);
+                    }
+                    .project-info {
+                        a {
+                            top: 20px;
+                        }
+                        .project-description {
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }
