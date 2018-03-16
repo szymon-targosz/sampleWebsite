@@ -286,11 +286,10 @@ nav {
 }
 
 
-// SECTION ABOUT && TECHNOLOGIES
+// SECTION ABOUT && TECHNOLOGIES && PROJECTS
 
-#about, #technologies {
+#about, #technologies, #projects {
     min-height: 40vh;
-    padding: 6rem 10px;
     h3, h1 {
         text-transform: uppercase;
         text-align: center;
@@ -310,7 +309,10 @@ nav {
     }
 }
 
+// section about
+
 #about {
+    padding: 6rem 10px;
     background: $mainBlue;
     h1 {
         color: #FFF;
@@ -325,7 +327,10 @@ nav {
     }
 }
 
+// section technologies
+
 #technologies {
+    padding: 6rem 10px;
     .row:last-of-type {
         padding-top: 2.5rem;
         .tech-box {
@@ -351,6 +356,35 @@ nav {
                     padding-bottom: 10px;
                 }
             }
+        }
+    }
+}
+
+
+// section projects
+
+#projects {
+    .projects-header {
+        padding: 6rem 10px;
+        background: #000;
+        min-height: 60vh;
+        h3 {
+            color: $mainBlue;
+        }
+        h1 {
+            color: #FFF;
+        }
+        span {
+            background: $mainBlue;
+        }
+    }
+    .projects-content {
+        margin-top: -10rem;
+        column-count: 2;
+        column-gap: 0.625rem;
+        .project {
+            display: inline-block;
+            margin-bottom: 0.625rem;
         }
     }
 }
