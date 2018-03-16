@@ -15,12 +15,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 880px) {
-        padding: 0 30px;
-    }
     @media (max-width: 640px) {
-        padding: 0 10px;
+        padding: 0 20px;
         height: 60px;
+    }
+    @media (max-width: 750px) and (min-width: 640px) {
+        padding: 0 30px;
     }
     .scroll-up {
         position: fixed;
@@ -183,7 +183,7 @@ nav {
 }
 
 
-// SECTION About
+// SECTION HOME
 
 #home {
     background: url('../images/bg.jpg') no-repeat center/cover;
@@ -193,26 +193,40 @@ nav {
         width: 100%;
         min-height: 100vh;
         background: rgba(0, 0, 0, .6);
-        padding-top: 260px;
-        @extend %clearfix;
+        padding: 35vh 10px 0 10px;
         @media (max-width: 640px) {
-            padding-top: 180px;
+            padding: 20vh 10px 0 10px;
+        }
+        @media (max-width: 340px) {
+            min-height: 110vh;
+        }
+        @media (min-width: 641px) and (max-width: 750px){
+            padding: 20vh 10px 0 10px;
         }
         .home-content {
-            width: 100%;
-            max-width: 800px;
-            padding-left: 10vw;
+            width: 70%;
+            margin-left: 10vw;
             float: left;
+            @media (max-width: 640px) {
+                width: 100%;
+                margin-left: 0;
+            }
             h1, h3 {
                 color: #FFF;
             }
             h3 {
                 text-transform: uppercase;
                 padding: 20px 0;
+                @media (max-width: 640px) {
+                    font-size: 1rem;
+                }
             }
             h1 {
                 font-size: 3rem;
                 line-height: 150%;
+                @media (max-width: 640px) {
+                    font-size: 1.75rem;
+                }
             }
             a {
                 display: inline-block;
@@ -225,7 +239,7 @@ nav {
                 padding: 20px;
                 transition: .3s;
                 font-weight: bold;
-                margin-top: 3.5em;
+                margin-top: 2.75rem;
                 &:hover {
                     background: #FFF;
                     color: #000;
@@ -234,28 +248,10 @@ nav {
                     background: #888;
                     border: 1px solid #888;
                 }
-                @media (max-width: 384px) {
-                    width: 175px;
-                }
-                @media (max-width: 375px) {
-                    &:first-of-type {
-                        margin-top: 2em;
-                    }
+                @media (max-width: 640px) {
                     &:last-of-type {
-                        margin-top: 0.75em;
+                        margin-top: 1em;
                     }
-                }
-            }
-            @media (max-width: 880px) {
-                max-width: 700px;
-            }
-            @media (max-width: 640px) {
-                padding: 0 10px;
-                h3 {
-                    font-size: 1rem;
-                }
-                h1 {
-                    font-size: 1.8rem;
                 }
             }
         }
@@ -266,8 +262,9 @@ nav {
             font-size: 1.75rem;
             margin-right: 1em;
             text-align: center;
-            @media (max-width: 780px) {
-                display: none;
+            display: none;
+            @media (min-width: 641px) {
+                display: block;
             }
             li {
                 transition: .3s ease-in-out;
@@ -289,29 +286,34 @@ nav {
 }
 
 
-// SECTION ABOUT
+// SECTION ABOUT && TECHNOLOGIES
 
-#about {
+#about, #technologies {
     min-height: 40vh;
-    background: $mainBlue;
-    padding: 7rem 10px;
+    padding: 6rem 10px;
     h3, h1 {
         text-transform: uppercase;
         text-align: center;
     }
     h1 {
-        color: #FFF;
-        font-size: 3.5rem;
+        font-size: 3rem;
         @media (max-width: 640px) {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
         }
     }
     span {
         display: block;
         margin: 0 auto;
         background: #000;
-        height: 1px;
+        height: 2px;
         width: 35%;
+    }
+}
+
+#about {
+    background: $mainBlue;
+    h1 {
+        color: #FFF;
     }
     p {
         text-align: center;
