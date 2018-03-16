@@ -366,7 +366,7 @@ nav {
 #projects {
     .projects-header {
         padding: 6rem 10px;
-        background: #000;
+        background: #0C0C0C;
         min-height: 60vh;
         h3 {
             color: $mainBlue;
@@ -409,7 +409,7 @@ nav {
                     background: #000;
                     width: 100%;
                     height: 100%;
-                    opacity: 0.75;
+                    opacity: 0;
                     transition: .3s ease-in-out;
                     a {
                         color: #FFF;
@@ -460,6 +460,7 @@ nav {
                         transform: scale(1.15);
                     }
                     .project-info {
+                        opacity: .75;
                         a {
                             top: 20px;
                         }
@@ -475,16 +476,10 @@ nav {
 
 // section CONTACT
 #contact {
-    background: url('../images/lostPlace.jpg') no-repeat center/cover;
+    background: url('../images/rain.jpg') no-repeat 35% 95%/cover;
     padding: 6rem 10px;
-    h3 {
-        color: $mainBlue;
-    }
     h1 {
         color: #FFF;
-    }
-    span {
-        background: $mainBlue;
     }
     .contact-main {
         @extend %clearfix;
@@ -494,6 +489,10 @@ nav {
         .contact-form {
             float: left;
             width: 60%;
+            @media (max-width: 640px) {
+                width: 100%;
+                float: none;
+            }
             form {
                 input, textarea {
                     background: transparent;
@@ -527,15 +526,32 @@ nav {
             padding: 20px 0 20px 40px;
             float: left;
             width: 40%;
+            @media (max-width: 640px) {
+                width: 100%;
+                float: none;
+            }
             h3 {
                 text-transform: none;
                 text-align: left;
                 padding: 10px 0;
+                color: $mainBlue;
             }
             p {
                 color: #FFF;
                 line-height: 150%;
+                @media (max-width: 768px) {
+                    font-size: .8rem;
+                }
             }
         }
     }
+}
+
+
+// FOOTER
+footer {
+    background: #0C0C0C;
+    color: #444;
+    text-align: center;
+    padding: 15px;
 }
