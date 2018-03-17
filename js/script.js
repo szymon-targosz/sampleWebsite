@@ -92,4 +92,12 @@ $(() => {
         });
     }
 
+    // sticky header
+    const header = $('header');
+    const headerDist = header.offset().top;
+
+    $(window).on('scroll', (e) => {
+        if ($(window).scrollTop() > headerDist) header.addClass('sticky');
+        else header.removeClass('sticky');
+    });
 });
