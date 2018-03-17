@@ -24,8 +24,8 @@ header {
     }
     .scroll-up {
         position: fixed;
-        right: 30px;
-        bottom: 30px;
+        right: 1rem;
+        bottom: 1rem;
         display: none;
         width: 40px;
         height: 40px;
@@ -290,6 +290,24 @@ nav {
                         color: $mainBlue;
                     }
                 }
+            }
+        }
+        a.scrollDown {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid $mainBlue;
+            border-radius: 50%;
+            bottom: 0.625rem;
+            right: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $mainBlue;
+            font-size: 1.25rem;
+            &:hover {
+                color: #0460b5;
+                border-color: #0460b5;
             }
         }
     }

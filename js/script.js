@@ -1,6 +1,5 @@
 $(() => {
 
-
     // SHOW/HIDE NAVIGATION
     const menuBtn = $('a.menu');
     menuBtn.on('click', showMenu);
@@ -18,6 +17,7 @@ $(() => {
                 opacity: 1,
             }, 800);
 
+            // smooth scroll - menu elements
             const anchors = $('.nav-main-list a');
             anchors.on('click', (e) => {
                 e.preventDefault();
@@ -29,11 +29,10 @@ $(() => {
                 });
             });
 
-
             // closing navigation
             $('nav a.nav-close').on('click', closeNav);
 
-            // CLOSE NAVIGATION PANEL
+            // CLOSE NAVIGATION PANEL func
             function closeNav() {
                 navElements.animate({
                     left: '100px',
@@ -43,13 +42,18 @@ $(() => {
                     right: '-280px',
                 }, 500);
             }
-
         };
     }
 
-    // PREVENT SUBMIT
-    $('input[type="submit"]').on('click', (e) => {
-        e.preventDefault();
+    //smooth scroll - internal elements
+    const innerScrollElems = $('a.scrollDown, .home-content a');
+    innerScrollElems.on('click', (e) => {
+        let target = $(e.target).attr('href');
+        console.log(target, typeof target);
+        if (typeof target === 'undefined') target = '#about';
+        $('html, body').animate({
+            scrollTop: $(target).offset().top,
+        }, 500);
     });
 
     //scroll to top button
@@ -64,6 +68,16 @@ $(() => {
         $('html, body').animate({
             scrollTop: 0,
         }, 600);
+    });
+
+    // PREVENT SUBMIT
+    $('input[type="submit"]').on('click', (e) => {
+        e.preventDefault();
+    });
+
+    // prevent projects links
+    $('#projects a').on('click', e => {
+        e.preventDefault();
     });
 
 });
