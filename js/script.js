@@ -49,7 +49,6 @@ $(() => {
     const innerScrollElems = $('a.scrollDown, .home-content a');
     innerScrollElems.on('click', (e) => {
         let target = $(e.target).attr('href');
-        console.log(target, typeof target);
         if (typeof target === 'undefined') target = '#about';
         $('html, body').animate({
             scrollTop: $(target).offset().top,

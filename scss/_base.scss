@@ -299,7 +299,7 @@ nav {
             border: 2px solid $mainBlue;
             border-radius: 50%;
             bottom: 0.625rem;
-            right: 2rem;
+            right: 1rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -310,6 +310,19 @@ nav {
                 border-color: #0460b5;
             }
         }
+    }
+}
+
+.upAndDown {
+    animation: upAndDown .4s ease-in 0s infinite alternate both;
+}
+
+@keyframes upAndDown {
+    from {
+        bottom: 0.625rem;
+    }
+    to {
+        bottom: 1.5rem;
     }
 }
 
