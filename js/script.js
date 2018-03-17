@@ -79,4 +79,17 @@ $(() => {
         e.preventDefault();
     });
 
+    // show on scroll
+    const elemsToShow = $('.hide');
+    $(window).on('scroll', checkIfShow);
+
+    function checkIfShow() {
+        elemsToShow.each((index, elem) => {
+            const bottomOfWindow = $(window).scrollTop() + $(window).height();
+            const topOfElem = $(elem).offset().top;
+
+            if (bottomOfWindow > topOfElem) $(elem).addClass('emerge');
+        });
+    }
+
 });
