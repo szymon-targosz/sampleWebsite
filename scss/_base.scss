@@ -554,12 +554,20 @@ nav {
         margin-top: 4rem;
         background: rgba(12, 12, 12, .95);
         padding: 10px;
+
         .contact-form {
             float: left;
             width: 60%;
             @media (max-width: 640px) {
                 width: 100%;
                 float: none;
+            }
+            .submitInfo {
+                color: red;
+                text-align: center;
+                &.ok {
+                    color: green;
+                }
             }
             form {
                 input, textarea {

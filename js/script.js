@@ -69,10 +69,6 @@ $(() => {
         }, 600);
     });
 
-    // PREVENT SUBMIT
-    $('input[type="submit"]').on('click', (e) => {
-        e.preventDefault();
-    });
 
     // prevent projects links
     $('#projects a').on('click', e => {
@@ -100,4 +96,60 @@ $(() => {
         if ($(window).scrollTop() > headerDist) header.addClass('sticky');
         else header.removeClass('sticky');
     });
+
+
+    // validation of the form
+    const form = $('form');
+    form.on('submit', validateAndSubmit);
+    const nameInput = $('#name');
+    const emailInput = $('#email');
+    const messageInput = $('#message');
+
+    function validateAndSubmit(e) {
+        e.preventDefault();
+        const submitInfo = $('.submitInfo');
+        submitInfo.empty();
+        const validName = validateName();
+        const validEmail = validateEmail();
+        const validMessage = validateMessage();
+
+        if (validName && validEmail && validMessage) {
+            submitInfo.append('<p>The message has been successfully sent.</p>').addClass('ok');
+            // $(this).unbind('submit').submit();
+        } else {
+            submitInfo.removeClass('ok');
+        };
+
+        function validateName() {
+            const name = nameInput.val();
+            const isValid = name.length > 2;
+            if (!isValid) {
+                submitInfo.append($('<p>Your name is too short.</p>'));
+                nameInput.val('');
+            };
+            return isValid;
+        }
+
+        function validateEmail() {
+            const email = emailInput.val();
+            const isValid = (email.indexOf('@') !== -1) && (email.indexOf('.') !== -1);
+            if(!isValid) {
+                submitInfo.append($('<p>The email must have the "@" and "."</p>'));
+                emailInput.val('');
+            }
+            return isValid;
+        }
+
+        function validateMessage() {
+            const message = messageInput.val();
+            const isValid = message.length > 10;
+            if(!isValid) {
+                submitInfo.append($('<p>Your message must be longer than 10 characters.</p>'));
+                messageInput.val('');
+            }
+            return isValid;
+        }
+    }
+
+
 });
